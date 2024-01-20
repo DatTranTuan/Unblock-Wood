@@ -194,6 +194,13 @@ public class Wood : MonoBehaviour
     //    Gizmos.DrawRay(transform.position, Vector3.left);
     //}
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == CacheString.SAW_LAYER)
+        {
+            Debug.Log("Crash");
+        }
+    }
 }
 
 
