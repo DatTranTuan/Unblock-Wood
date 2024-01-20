@@ -199,6 +199,9 @@ public class Wood : MonoBehaviour
         if (collision.gameObject.layer == CacheString.SAW_LAYER)
         {
             Debug.Log("Crash");
+            checkMove = false;
+            Destroy(this.gameObject);
+            Time.timeScale = 0f;
         }
     }
 }

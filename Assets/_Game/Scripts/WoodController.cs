@@ -28,6 +28,8 @@ public class WoodController : MonoBehaviour
             wood = hit.collider.GetComponent<Wood>();
         }
 
+        // Mobile
+
         //if (mouseDown == false && Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
         //{
         //    startPos = Input.touches[0].position;
@@ -83,6 +85,7 @@ public class WoodController : MonoBehaviour
                 Debug.Log("Swipe up");
                 wood.direc = Direction.Up;
                 wood.CheckRaycast(Vector3.up);
+                GameManager.Instance.loseCount--;
                 //wood.checkMove = true;
             }
             else if (Input.mousePosition.y <= startPos.y - mouseRange)
@@ -91,6 +94,7 @@ public class WoodController : MonoBehaviour
                 Debug.Log("Swipe down");
                 wood.direc = Direction.Down;
                 wood.CheckRaycast(Vector3.down);
+                GameManager.Instance.loseCount--;
                 //wood.checkMove = true;
             }
             else if (Input.mousePosition.x <= startPos.x - mouseRange)
@@ -99,6 +103,7 @@ public class WoodController : MonoBehaviour
                 Debug.Log("Swipe left");
                 wood.direc = Direction.Left;
                 wood.CheckRaycast(Vector3.left);
+                GameManager.Instance.loseCount--;
                 //wood.checkMove = true;
             }
             else if (Input.mousePosition.x >= startPos.x + mouseRange)
@@ -107,6 +112,7 @@ public class WoodController : MonoBehaviour
                 Debug.Log("Swipe right");
                 wood.direc = Direction.Right;
                 wood.CheckRaycast(Vector3.right);
+                GameManager.Instance.loseCount--;
                 //wood.checkMove = true;
             }
         }
