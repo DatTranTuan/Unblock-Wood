@@ -201,7 +201,8 @@ public class Wood : MonoBehaviour
             Debug.Log("Crash");
             checkMove = false;
             Destroy(this.gameObject);
-            Time.timeScale = 0f;
+            GameManager.Instance.OnLosing();
+            UIManager.Instance.OnCrashSaw();
         }
     }
 }
